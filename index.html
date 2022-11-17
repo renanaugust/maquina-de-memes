@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/devices.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>MAQUINA DE MEMES</title>
+</head>
+<body>
+    
+   <div class="container">
+    <div class="app">
+
+        <div class="marvel-device iphone8plus black">
+            <div class="top-bar"></div>
+            <div class="sleep"></div>
+            <div class="volume"></div>
+            <div class="camera"></div>
+            <div class="sensor"></div>
+            <div class="speaker"></div>
+            <div class="screen">
+                <div class="logo">
+                    <img src="./pictures/logo.svg" alt="Logo da DIO">
+                </div>
+                <div class="app-image">
+                    <textarea 
+                    name="" 
+                    class="text-box" 
+                    placeholder="Digite seu meme" 
+                    aria-multiline="true"
+                    ></textarea>
+                    <div id="display-image"></div>
+                    
+                    <textarea 
+                    name="" 
+                    class="text-box" 
+                    placeholder="Digite seu meme" 
+                    aria-multiline="true"
+                    ></textarea>
+                </div>
+
+                <div class="app-photo-picker">
+                    <!-- <select id="meme-list">
+                        <option value="1">meme_programador.jpg</option>
+                    </select> -->
+                    <div class="image-upload">
+                        <input type="file" name="" id="logo" onchange="fileValue(this)" >
+                        <label for="logo" class="upload-field" id="file-label">
+                            <div class="file-thumbnail">
+                                <img id="image-preview" src="./pictures/upload-image.png" alt="">
+                                <h3 id="filename">
+                                    Arraste e solte um arquivo aqui
+                                </h3>
+                                <p >Suporta JPG, PNG, SVG</p>
+                            </div>
+                        </label>
+                    </div>
+                    <!-- <input type="file" 
+                    id="image-input"
+                    accept="image/jpeg, image/png"
+                    > -->
+                </div>
+                <div class="download">
+                    <button class="btn-download">
+                        <i class="fa fa-download"></i> Baixar
+                    </button>
+                </div>
+            </div>
+            <div class="home"></div>
+            <div class="bottom-bar"></div>
+        </div>
+        
+    </div>
+   </div>
+</body>
+<script>
+   function fileValue(value) {
+            var path = value.value;
+            var extenstion = path.split('.').pop();
+            if(extenstion == "jpg" || extenstion == "svg" || extenstion == "jpeg" || extenstion == "png"|| extenstion == "gif"){
+                document.getElementById('image-preview').src = window.URL.createObjectURL(value.files[0]);
+                var filename = path.replace(/^.*[\\\/]/, '').split('.').slice(0, -1).join('.');
+                document.getElementById("filename").innerHTML = filename;
+            }else{
+                alert("Arquivo não suportador. Por favor, carregue uma imagem com a extensão citada abaixo. ")
+            }
+        } 
+</script>
+</html>
