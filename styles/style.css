@@ -62,7 +62,7 @@ textarea {
     text-align: center;
     padding: 6px;
     overflow: hidden;
-    height: 25px;
+    height: 40px;
     background: #2C3E50;
     color: #ffff54;
     outline: none;
@@ -86,9 +86,9 @@ textarea {
     background-color: #8031A7;
     border: none;
     color: white;
-    padding: 12px 30px;
+    padding: 8px 30px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
   }
 
 /* Darker background on mouse-over */
